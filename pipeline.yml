@@ -1,0 +1,10 @@
+steps:
+  - label: ":docker: Build Docker Image"
+    commands:
+      - echo "--- Building Docker image"
+      - docker build -f Dockerfile -t image_python_test:v1 .
+
+  - label: ":docker: Run Docker Image"
+    commands:
+      - echo "--- Running Docker container"
+      - docker run image_python_test:v1
