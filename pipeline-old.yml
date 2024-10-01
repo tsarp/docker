@@ -9,8 +9,8 @@ steps:
       - echo "--- Running Docker container"
       - docker run image_python_test:v1
     
-    plugins:
-      - docker#v3.6.0:
-        image: "image_python_test:v1"
-        environment:
-          - DOCKER_BUILDKIT=1
+    # plugins:
+    #   - docker#v3.6.0:
+    #     image: "image_python_test:v1"
+    #     environment:
+    #       - DOCKER_BUILDKIT=1

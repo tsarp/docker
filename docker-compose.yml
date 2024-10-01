@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    build: ./app
+    container_name: python-app
+    networks:
+      - my-network
+
+  buildkite-agent:
+    build: ./buildkite-agent
+    container_name: buildkite-agent
+    environment:
+      # Replace with your actual Buildkite Agent token
+      BUILDKITE_AGENT_TOKEN: "pZQjZtmSccbv3oNEVMp2R9bc"
+    volumes:
+      # Allows the agent to interact with Docker on the host
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

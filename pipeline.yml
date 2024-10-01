@@ -1,0 +1,4 @@
+steps:
+  - label: ":python: Run test.py"
+    commands:
+      - python app/test.py
